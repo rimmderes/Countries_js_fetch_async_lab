@@ -14,6 +14,7 @@ const getCountryByName = async (countryName) => {
    // add the new element with the country's name
     countrySection.appendChild(newElement);
     countrySection.appendChild(newElement2);
+    
 
     // document.getElementById("insertCountry").innerHTML = "";
     
@@ -25,7 +26,7 @@ const getCountryByName = async (countryName) => {
     // display all countries name and population
     const getAllCountries = async (event)  => {
         
-        event.preventDefault();
+        // event.preventDefault();
         
         const allCountriesResponse = await fetch("https://restcountries.com/v3.1/all");
         const dataJson = await allCountriesResponse.json();
@@ -78,7 +79,7 @@ const handleCountryForm = async (event) => {
     const inputCountryResponse = await fetch(" https://restcountries.com/v3.1/all");
     const jsonData = await inputCountryResponse.json();
 
-    const countryList = document.querySelector("#insertCountry");
+    const countryList = document.querySelector("countryItem");
     
     const countryItem = document.createElement("p");
     countryItem.textContent = getCountryByName(event.target.toDo.value);
